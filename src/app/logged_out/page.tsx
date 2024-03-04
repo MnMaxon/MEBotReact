@@ -1,3 +1,5 @@
+'use server'
+
 import Image from "next/image"
 import Link from "next/link"
 //import { ArrowRightIcon } from "@radix-ui/react-icons"
@@ -13,10 +15,13 @@ import {
 } from "@/components/page-header"
 import {buttonVariants} from "@/components/ui/button"
 import {Separator} from "@/components/ui/separator"
-import AuthenticationPageExample from "@/app/page_auth_example"
+import LoggedOutHome from "@/app/logged_out/logged_out";
+import {cookies} from "next/headers";
 
-export default function IndexPage() {
-    console.log("Launching page (Index)")
+const SESSION_ID = 'sessionId'
+
+export default async function IndexPage() {
+    console.log("Launching page (Logged Out)")
     return (
         <div className="container relative">
 
@@ -65,11 +70,10 @@ export default function IndexPage() {
             </section>
             <section className="hidden md:block">
                 <div className="overflow-hidden rounded-lg border bg-background shadow">
-                    {/*<CookiesProvider defaultSetOptions={{path: '/'}}>*/}
-                        <AuthenticationPageExample/>
-                    {/*</CookiesProvider>*/}
+                    <LoggedOutHome/>
                 </div>
             </section>
         </div>
     )
 }
+
