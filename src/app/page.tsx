@@ -33,17 +33,6 @@ export default function IndexPage() {
                 <PageHeaderDescription>
                     /meme - run commands in discord - Or use this website
                 </PageHeaderDescription>
-                <div className="flex w-full items-center space-x-4 pb-8 pt-4 md:pb-10">
-                    <Link
-                        target="_blank"
-                        rel="noreferrer"
-                        href={siteConfig.links.github}
-                        className={cn(buttonVariants({variant: "outline"}))}
-                    >
-                        <Icons.gitHub className="mr-2 h-4 w-4"/>
-                        GitHub
-                    </Link>
-                </div>
             </PageHeader>
             <ExamplesNav className="[&>a:first-child]:text-primary"/>
             <section
